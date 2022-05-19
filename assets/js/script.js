@@ -22,13 +22,8 @@ function generatePassword() {
   let passwordOptions = "";
   let password = "";
 
-  console.log(characters);
-  console.log(lowerCase);
-  console.log(upperCase);
-  console.log(numbers);
-  console.log(symbols);
-
   // Check if security prompts are confirmed and write conditional statements
+  console.log(characters);
   if(isNaN (parseInt(characters))) {
     alert("Choose a number from 8-128.");
       return;
@@ -37,10 +32,16 @@ function generatePassword() {
     alert("Your password is not the correct length. Please, choose a number from 8-128.");
     return;
   }
+  console.log(lowerCase);
   if(lowerCase === true) {
     let upperCase
   }
+  console.log(upperCase);
+  console.log(numbers);
+  console.log(symbols);
 }
 
+// Call generatePassword() function
+generatePassword();
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
