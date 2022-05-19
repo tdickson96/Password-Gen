@@ -34,11 +34,24 @@ function generatePassword() {
   }
   console.log(lowerCase);
   if(lowerCase === true) {
-    let upperCase
+    let lowerLetters = "abcdefghijklmnopqrstuvwxyz";
+    passwordOptions += lowerLetters;
   }
   console.log(upperCase);
+  if(lowerCase === true) {
+    let lowerLetters = "abcdefghijklmnopqrstuvwxyz";
+    passwordOptions += lowerLetters;
+  }
   console.log(numbers);
+  if(lowerCase === true) {
+    let lowerLetters = "abcdefghijklmnopqrstuvwxyz";
+    passwordOptions += lowerLetters;
+  }
   console.log(symbols);
+  if(lowerCase === true) {
+    let lowerLetters = "abcdefghijklmnopqrstuvwxyz";
+    passwordOptions += lowerLetters;
+  }
 }
 
 // Call generatePassword() function
