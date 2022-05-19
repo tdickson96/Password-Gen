@@ -15,8 +15,8 @@ function writePassword() {
 // Secure password function
 function generatePassword() {
   let characters = prompt("Character length (minimum 8 - maximum 128");
-  let lowerCase = confirm("Toggle to use lower case letters: abcdefghijklmnopqrstuvwxyz");
-  let upperCase = confirm("Toggle to use upper case letters: ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+  let lowers = confirm("Toggle to use lower case letters: abcdefghijklmnopqrstuvwxyz");
+  let uppers = confirm("Toggle to use upper case letters: ABCDEFGHIJKLMNOPQRSTUVWXYZ");
   let numbers = confirm("Toggle to use numbers, such as: 1234567890");
   let symbols = confirm("Toggle to use symbols, such as: !@#$%^&*()_+");
   let passwordOptions = "";
@@ -32,28 +32,36 @@ function generatePassword() {
     alert("Your password is not the correct length. Please, choose a number from 8-128.");
     return;
   }
-  console.log(lowerCase);
-  if(lowerCase === true) {
-    let lowerLetters = "abcdefghijklmnopqrstuvwxyz";
-    passwordOptions += lowerLetters;
+  console.log(lowers);
+  if(lowers === true) {
+    let lowerTrue = "abcdefghijklmnopqrstuvwxyz";
+    passwordOptions += lowerTrue;
   }
   console.log(upperCase);
-  if(lowerCase === true) {
-    let lowerLetters = "abcdefghijklmnopqrstuvwxyz";
-    passwordOptions += lowerLetters;
+  if(uppers === true) {
+    let upperTrue = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    passwordOptions += upperTrue;
   }
   console.log(numbers);
-  if(lowerCase === true) {
-    let lowerLetters = "abcdefghijklmnopqrstuvwxyz";
-    passwordOptions += lowerLetters;
+  if(numbers === true) {
+    let numbersTrue = "01234567890";
+    passwordOptions += numbersTrue;
   }
   console.log(symbols);
-  if(lowerCase === true) {
-    let lowerLetters = "abcdefghijklmnopqrstuvwxyz";
-    passwordOptions += lowerLetters;
+  if(symbols === true) {
+    let symbolsTrue = "`~!@#$%^&*()-_=+[{]}\|;:',<.>/?";
+    passwordOptions += symbolsTrue;
   }
+
 }
 
+// Now I want to generate a password with uppers, lowers, numbers and symbols
+// I can use the variables I have declared to set a function loop through all available user password rules
+// Remember this from Line 9: passwordText.value = password;
+
+
+// Logs all the password options I have created, or should!
+console.log(passwordOptions)
 // Call generatePassword() function
 generatePassword();
 // Add event listener to generate button
