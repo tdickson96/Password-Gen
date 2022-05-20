@@ -1,4 +1,4 @@
-// Assignment Code
+// Link generate button to ID attribute: generate
 let generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -11,16 +11,16 @@ function writePassword() {
 }
 
 // Generate password
-
 // Secure password function
 function generatePassword() {
-  let characters = prompt("Character length (minimum 8 - maximum 128");
+  let characters = prompt("Password length (minimum 8 - maximum 128)");
   let lowers = confirm("Toggle to use lower case letters: abcdefghijklmnopqrstuvwxyz");
   let uppers = confirm("Toggle to use upper case letters: ABCDEFGHIJKLMNOPQRSTUVWXYZ");
   let numbers = confirm("Toggle to use numbers, such as: 1234567890");
   let symbols = confirm("Toggle to use symbols, such as: !@#$%^&*()_+");
   let passwordOptions = "";
   let password = "";
+
 
   // Check if security prompts are confirmed and write conditional statements
   console.log(characters);
@@ -37,7 +37,7 @@ function generatePassword() {
     let lowerTrue = "abcdefghijklmnopqrstuvwxyz";
     passwordOptions += lowerTrue;
   }
-  console.log(upperCase);
+  console.log(uppers);
   if(uppers === true) {
     let upperTrue = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     passwordOptions += upperTrue;
@@ -52,16 +52,23 @@ function generatePassword() {
     let symbolsTrue = "`~!@#$%^&*()-_=+[{]}\|;:',<.>/?";
     passwordOptions += symbolsTrue;
   }
-
-}
+  // Logs all the password options
+  console.log(passwordOptions);
 
 // Now I want to generate a password with uppers, lowers, numbers and symbols
 // I can use the variables I have declared to set a function loop through all available user password rules
 // Remember this from Line 9: passwordText.value = password;
+// Changed from global to local scope to give access to cahracters variable
+for (var i = 0; i <= characters; i++) {
+  let passwordGenerate = Math.floor(Math.random() * passwordOptions.length);
+  password += passwordOptions.substring(passwordGenerate, passwordGenerate + 1);
+  } 
+  console.log(password);
+  document.getElementById("password").value = password;
+}
 
 
-// Logs all the password options I have created, or should!
-console.log(passwordOptions)
+
 // Call generatePassword() function
 generatePassword();
 // Add event listener to generate button
