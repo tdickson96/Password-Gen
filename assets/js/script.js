@@ -57,17 +57,15 @@ function generatePassword() {
 
 // Now I want to generate a password with uppers, lowers, numbers and symbols
 // I can use the variables I have declared to set a function loop through all available user password rules
-// Remember this from Line 9: passwordText.value = password;
-// Changed from global to local scope to give access to cahracters variable
+// Changed from global to local scope to give access to characters variable
 for (var i = 0; i <= characters; i++) {
   let passwordGenerate = Math.floor(Math.random() * passwordOptions.length);
   password += passwordOptions.substring(passwordGenerate, passwordGenerate + 1);
   } 
   console.log(password);
+  // Remember: passwordText.value = password;
   document.getElementById("password").value = password;
 }
-
-
 
 // Call generatePassword() function
 generatePassword();
